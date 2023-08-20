@@ -29,7 +29,7 @@
  * @l_modifier : on if l_modifier is specified
 */
 
-typedef struct parameters
+typedef struct parameter
 {
 	unsigned int unsign	: 1;
 	unsigned int plusflag	: 1;
@@ -49,13 +49,13 @@ typedef struct parameters
  * struct specifier - Struct to take token
  *
  * @specifier: the format of the token
- * @f: the function  to deal with 
+ * @f: the function  to deal with
 */
 
 typedef struct specifier
 {
-	char *specifier
-	int (*f)(va_list, params_t *)
+	char *specifier;
+	int (*f)(va_list, params_t *);
 } specifier_t;
 
 /* _put.c */
@@ -69,8 +69,8 @@ int print_string(va_list va, params_t *params);
 int print_percent(va_list va, params_t *params);
 int print_S(va_list va, params_t *params);
 
-/* Number.c module */
-char *convert(long int num; int base; int flags, params_t *params);
+/* Number.c */
+char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list va, params_t *params);
 int print_address(va_list va, params_t *params);
 
