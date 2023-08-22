@@ -67,20 +67,27 @@ int get_print_func(char *s, va_list va, params_t *params)
 */
 int get_flag(char *s, params_t *params)
 {
-	int i = 0;
+	int x = 0;
 
-	if (*s == '+')
-		i = params->plusflag = 1;
-	else if (*s == ' ')
-		i = params->spaceflag = 1;
-	else if (*s == '#')
-		i = params->hashtagflag = 1;
-	else if (*s == '-')
-		i = params->negativeflag = 1;
-	else if (*s == '0')
-		i = params->zeroflag = 1;
-
-	return (i);
+	switch (*s)
+	{
+		case '*':
+			x = params->plusflag = 1;
+			break;
+		case ' ':
+			x = params->spaceflag = 1;
+			break;
+		case '#':
+			x = params->hashtagflag = 1;
+			break;
+		case '-':
+			x = params->negativeflag = 1;
+			break;
+		case '0':
+			x = params->zeroflag = 1;
+			break;
+	}
+	return (x);
 }
 
 /**
