@@ -4,7 +4,7 @@
  * convert - converter function
  * @num: num
  * @base: base
- * @flag: arg flags
+ * @flags: arg flags
  * @params: parameters
  * Return: string
 */
