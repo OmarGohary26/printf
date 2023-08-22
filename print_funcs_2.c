@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_from_to - printing char adresses
+ * print_start_stop - printing char adresses
  * @start: starting address
  * @stop: stopping address
  * @except: except address
  * Return: number of bytes
 */
 
-int print_from_to(char *start, char *stop, char *except)
+int print_start_stop(char *start, char *stop, char *except)
 {
 	int total = 0;
 
@@ -22,13 +22,13 @@ int print_from_to(char *start, char *stop, char *except)
 }
 
 /**
- * print_rev - prints the string in reverse
+ * reverse_print - prints the string in reverse
  * @va: string
- * @params: parameters struct
+ * @params: struct
  * Return: number of bytes
 */
 
-int print_rev(va_list va, params_t *params)
+int reverse_print(va_list va, params_t *params)
 {
 	int length, total = 0;
 	char *st = va_arg(va, char *);

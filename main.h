@@ -62,12 +62,12 @@ typedef struct specifier
 int _putchar(int c);
 int _puts(char *str);
 
-/* print_functions.c module*/
+/* print_funcs.c module*/
 int print_char(va_list va, params_t *params);
 int print_int(va_list va, params_t *params);
 int print_string(va_list va, params_t *params);
-int print_percent(va_list va, params_t *params);
-int print_S(va_list va, params_t *params);
+int print_perc(va_list va, params_t *params);
+int print_string_upper(va_list va, params_t *params);
 
 /* Number.c module*/
 char *convert(long int num, int base, int flags, params_t *params);
@@ -78,7 +78,7 @@ int print_address(va_list va, params_t *params);
 int (*get_specifier(char *s)) (va_list va, params_t *params);
 int get_print_func(char *s, va_list va, params_t *params);
 int get_flag(char *s, params_t *params);
-int get modifier(char *s, params_t *params);
+int get_modifier(char *s, params_t *params);
 char *get_width(char *s, params_t *params, va_list va);
 
 /*converter.c module*/
@@ -87,9 +87,9 @@ int upper_HEX(va_list va, params_t *params);
 int conv_binary(va_list va, params_t *params);
 int conv_octal(va_list va, params_t *params);
 
-/* simple_printers.c */
-int print_form_to(char *start, char *stop, char *except);
-int print_rev(va_list va, params_t *params);
+/*print_funcs_2.c */
+int print_start_stop(char *start, char *stop, char *except);
+int reverse_print(va_list va, params_t *params);
 int print_rot13(va_list va, params_t *params);
 
 /* print_number.c */
