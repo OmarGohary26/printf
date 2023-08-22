@@ -1,11 +1,11 @@
 #ifndef _PRINTF_H
 #define _PRINTF_H
 
-#include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
+#include <stdlib.h>
 
 #define OUT_BUF_S 1024
 #define BF_FLUSH -1
