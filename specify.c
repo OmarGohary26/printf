@@ -2,9 +2,8 @@
 
 /**
  * get_specifier - finds the format
- * @s: format string
- *
- * Return: void
+ * @s: string input
+ * Return: if found returns int else NULL
 */
 
 int (*get_specifier(char *s)) (va_list va, params_t *params)
@@ -14,15 +13,15 @@ int (*get_specifier(char *s)) (va_list va, params_t *params)
 		{"d", print_int},
 		{"s", print_string},
 		{"i", print_int},
-		{"%", print_percent},
+		{"%", print_perc},
 		{"u", print_unsigned},
-		{"b", print_binary},
-		{"o", print_octal},
-		{"x", print_hex},
-		{"X", print_HEX},
+		{"b", conv_binary},
+		{"o", conv_octal},
+		{"x", lowert_hex},
+		{"X", upper_HEX},
 		{"p", print_address},
-		{"S", print_S},
-		{"r", print_rev},
+		{"S", print_string_upper},
+		{"r", reverse_print},
 		{"R", print_rot13},
 		{NULL, NULL}
 	};
@@ -41,11 +40,11 @@ int (*get_specifier(char *s)) (va_list va, params_t *params)
 }
 
 /**
- * get_print_func - find the format of the function
- * @s: format string
- * @va: the pointer
- * @params: parameters struct
- * Return: number of bytes printed
+ * get_print_func - gets the format of the function
+ * @s: string para
+ * @va: arg pointer
+ * @params: struct
+ * Return: no of bytes
 */
 
 int get_print_func(char *s, va_list va, params_t *params)
@@ -62,9 +61,9 @@ int get_print_func(char *s, va_list va, params_t *params)
 
 /**
  * get_flag - find the flag
- * @s: format
- * @params: params struct
- * Return: if flag is valid
+ * @s: string
+ * @params: struct
+ * Return: flag
 */
 int get_flag(char *s, params_t *params)
 {
@@ -86,10 +85,10 @@ int get_flag(char *s, params_t *params)
 
 /**
  * get_width - gets the width
- * @s: format string
- * @params: parameters struct
- * @va: argument pointer
- * Return: new pointer
+ * @s: string
+ * @params: struct
+ * @va: arg pointer
+ * Return: new ptr
 */
 
 char *get_width(char *s, params_t *params, va_list va)
