@@ -35,7 +35,7 @@ int print_int(va_list va, params_t *params)
 	if (params->l_modifier)
 		ln = va_arg(va, long);
 	else if (params->h_modifier)
-		ln = (short_int)va_arg(va, int);
+		ln = (short int)va_arg(va, int);
 	else
 		ln = (int)va_arg(va, int);
 	return (print_number(convert(ln, 10, 0, params), params));
@@ -56,7 +56,7 @@ int print_string(va_list va, params_t *params)
 	(void)params;
 	switch ((int)(!st))
 		case 1:
-			st = NULL_STRING;
+			st = NULL_S;
 	j = p = _strlen(st);
 	if (params->precision < p)
 		j = p = params->precision;
@@ -117,7 +117,7 @@ int print_string_upper(va_list va, params_t *params)
 		{
 			sum += _putchar('\\');
 			sum += _putchar('x');
-			hex = convert(*s, 16, 0, params);
+			hx = convert(*s, 16, 0, params);
 			if (!hx[1])
 				sum += _putchar('0');
 			sum += _puts(hx);
