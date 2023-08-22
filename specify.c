@@ -84,6 +84,24 @@ int get_flag(char *s, params_t *params)
 }
 
 /**
+ * get_modifier - gets the modifier
+ * @s: string
+ * @params: struct
+ * Return: flag
+*/
+
+int get_modifier(char *s, params_t *params)
+{
+	int x = 0;
+
+	if (*s == 'h')
+		x = params->h_modifier = 1;
+	else if (*s == 'l')
+		x = params->l_modifier = 1;
+	return (x);
+}
+
+/**
  * get_width - gets the width
  * @s: string
  * @params: struct
