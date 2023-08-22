@@ -20,7 +20,7 @@ int lower_hex(va_list va, params_t *params)
 	else
 		d = (unsigned int)va_arg(va, unsigned int);
 
-	st = convert(d, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+	st = convert(d, 16, CONV_UNSIGNED | CONV_LOW, params);
 	if (params->hashtagflag && d)
 	{
 		*--st = 'x';
@@ -50,7 +50,7 @@ int upper_HEX(va_list va, params_t *params)
 	else
 		d = (unsigned int)va_arg(va, unsigned int);
 
-	st = convert(d, 16, CONVERT_UNSIGNED, params);
+	st = convert(d, 16, CONV_UNSIGNED, params);
 	if (params->hashtagflag && d)
 	{
 		*--st = 'X';
@@ -70,10 +70,10 @@ int upper_HEX(va_list va, params_t *params)
 int conv_binary(va_list va, params_t *params)
 {
 	unsigned int num = va_arg(va, unsigned int);
-	char *st = convert(num, 2, CONVERT_UNSIGNED, params);
+	char *st = convert(num, 2, CONV_UNSIGNED, params);
 	int ctr = 0;
 
-	if (params->hhashtagflag && num)
+	if (params->hashtagflag && num)
 		*--st = '0';
 	params->unsign = 1;
 	return (ctr += print_number(st, params));
@@ -98,7 +98,7 @@ int conv_octal(va_list va, params_t *params)
 		d = (unsigned short int)va_arg(va, unsigned int);
 	else
 		d = (unsigned int)va_arg(va, unsigned int);
-	st = convert(d, 8, CONVERT_UNSIGNED, params);
+	st = convert(d, 8, CONV_UNSIGNED, params);
 
 	if (params->hashtagflag && d)
 		*--st = '0';
