@@ -83,13 +83,13 @@ int print_string(va_list va, params_t *params)
 }
 
 /**
- * print_percent - print string
+ * print_perc - print percent sign
  * @va: arg pointer
  * @params: the parameters struct
  * Return: int
 */
 
-int print_percent(va_list va, params_t *params)
+int print_perc(va_list va, params_t *params)
 {
 	(void)va;
 	(void)params;
@@ -97,13 +97,13 @@ int print_percent(va_list va, params_t *params)
 }
 
 /**
- * print_S - print strings
+ * print_string_upper - print upper case strings
  * @va: arg pointer
  * @params: struct ara
  * Return: int
 */
 
-int print_S(va_list va, params_t *params)
+int print_string_upper(va_list va, params_t *params)
 {
 	int sum = 0;
 	char *s = va_arg(va, char *);
@@ -118,9 +118,9 @@ int print_S(va_list va, params_t *params)
 			sum += _putchar('\\');
 			sum += _putchar('x');
 			hex = convert(*s, 16, 0, params);
-			if (!hex[1])
+			if (!hx[1])
 				sum += _putchar('0');
-			sum += _puts(hex);
+			sum += _puts(hx);
 		}
 		else
 		{
@@ -129,4 +129,3 @@ int print_S(va_list va, params_t *params)
 	}
 	return (sum);
 }
-
