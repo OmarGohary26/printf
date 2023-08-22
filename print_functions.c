@@ -81,3 +81,52 @@ int print_string(va_list va, params_t *params)
 	}
 	return (total);
 }
+
+/**
+ * print_percent - print string
+ * @va: arg pointer
+ * @params: the parameters struct
+ * Return: int
+*/
+
+int print_percent(va_list va, params_t *params)
+{
+	(void)va;
+	(void)params;
+	return (_putchar('%'));
+}
+
+/**
+ * print_S - print strings
+ * @va: arg pointer
+ * @params: struct ara
+ * Return: int
+*/
+
+int print_S(va_list va, params_t *params)
+{
+	int sum = 0;
+	char *s = va_arg(va, char *);
+	char *hx;
+
+	if ((int) (!s))
+		return (_puts(NULL_S));
+	for (; *s; s++)
+	{
+		if ((*s > 0 && *s < 32) || *s >= 127)
+		{
+			sum += _putchar('\\');
+			sum += _putchar('x');
+			hex = convert(*s, 16, 0, params);
+			if (!hex[1])
+				sum += _putchar('0');
+			sum += _puts(hex);
+		}
+		else
+		{
+			sum += _putchar(*s);
+		}
+	}
+	return (sum);
+}
+
