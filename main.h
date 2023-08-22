@@ -58,18 +58,18 @@ typedef struct specifier
 	int (*f)(va_list, params_t *);
 } specifier_t;
 
-/* _put.c */
+/* _put.c module*/
 int _putchar(int c);
 int _puts(char *str);
 
-/* print_functions.c */
+/* print_functions.c module*/
 int print_char(va_list va, params_t *params);
 int print_int(va_list va, params_t *params);
 int print_string(va_list va, params_t *params);
 int print_percent(va_list va, params_t *params);
 int print_S(va_list va, params_t *params);
 
-/* Number.c */
+/* Number.c module*/
 char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list va, params_t *params);
 int print_address(va_list va, params_t *params);
@@ -81,11 +81,11 @@ int get_flag(char *s, params_t *params);
 int get modifier(char *s, params_t *params);
 char *get_width(char *s, params_t *params, va_list va);
 
-/* convert _number.c */
-int print_hex(va_list va, params_t *params);
-int print_HEX(va_list va, params_t *params);
-int print_binary(va_list va, params_t *params);
-int print_octal(va_list va, params_t *params);
+/*converter.c module*/
+int lower_hex(va_list va, params_t *params);
+int upper_HEX(va_list va, params_t *params);
+int conv_binary(va_list va, params_t *params);
+int conv_octal(va_list va, params_t *params);
 
 /* simple_printers.c */
 int print_form_to(char *start, char *stop, char *except);

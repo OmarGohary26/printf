@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_hex - a function that prints uns hex numbers in lowercase
+ * lower_hex - a function that prints hex numbers in lowercase
  * @va: arg pointer
  * @params: struct
- * Return: bytes printed
+ * Return: number of bytes
 */
 
-int print_hex(va_list va, params_t *params)
+int lower_hex(va_list va, params_t *params)
 {
 	unsigned long d;
 	int ctr = 0;
@@ -31,13 +31,13 @@ int print_hex(va_list va, params_t *params)
 }
 
 /**
- * print_HEX - a function that prints uns hex numbers in uppercase
+ * upper_HEX - a function that prints hex numbers in uppercase
  * @va: arg pointer
  * @params: struct
  * Return: number of bytes
 */
 
-int print_HEX(va_list va, params_t *params)
+int upper_HEX(va_list va, params_t *params)
 {
 	unsigned long d;
 	int ctr = 0;
@@ -61,13 +61,13 @@ int print_HEX(va_list va, params_t *params)
 }
 
 /**
- * print_binary - a function that prints unsigned binary number
+ * conv_binary - a function that prints unsigned binary number
  * @va: ag pointer
  * @params: struct
  * Return: number of bytes
 */
 
-int print_binary(va_list va, params_t *params)
+int conv_binary(va_list va, params_t *params)
 {
 	unsigned int num = va_arg(va, unsigned int);
 	char *st = convert(num, 2, CONVERT_UNSIGNED, params);
@@ -80,13 +80,13 @@ int print_binary(va_list va, params_t *params)
 }
 
 /**
- * print_octal - a function that prints uns octal numbers
+ * conv_octal - a function that prints uns octal numbers
  * @va: arg pointer
  * @params: struct
  * Return: number of bytes
 */
 
-int print_octal(va_list va, params_t *params)
+int conv_octal(va_list va, params_t *params)
 {
 	unsigned long d;
 	char *st;
