@@ -28,11 +28,11 @@ char *convert(long int num, int base, int flags, params_t *params)
 	p = &buff[49];
 	*p = '\0';
 
-	while (n != 0)
+	do
 	{
 		*--p = arr[n % base];
 		n /= base;
-	}
+	} while (n != 0);
 
 	if (s)
 		*--p = s;
