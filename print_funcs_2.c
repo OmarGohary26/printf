@@ -73,7 +73,7 @@ int print_rot13(va_list va, params_t *params)
 		}
 		else
 			ctr += _putchar(p[x]);
-		i++;
+		x++;
 	}
 	return (ctr);
 }
