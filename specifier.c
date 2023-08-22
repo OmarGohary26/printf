@@ -122,19 +122,19 @@ int get_flag(char *s, params_t *params)
 	switch (*s)
 	{
 		case '+':
-			i = params->plus_flag = 1;
+			i = params->plusflag = 1;
 			break;
 		case ' ':
-			i = params->space_flag = 1;
+			i = params->spaceflag = 1;
 			break;
 		case '#':
-			i = params->hashtagt_flag = 1;
+			i = params->hashtagflag = 1;
 			break;
 		case '-':
-			i = params->minus_flag = 1;
+			i = params->negativeflag = 1;
 			break;
 		case '0':
-			i = params->zero_flag = 1;
+			i = params->zeroflag = 1;
 			break;
 	}
 	return (i);
