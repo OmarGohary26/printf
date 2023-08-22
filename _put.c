@@ -22,7 +22,7 @@ int _puts(char *str)
  * Return: On success 1 , on Error -1
 */
 
-int _putchar(int c);
+int _putchar(int c)
 {
 	static int i;
 	static char buf[OUT_BUF_S];
