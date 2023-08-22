@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int total = 0;
 	va_list va;
 	char *ptr, *strt;
-	params_t para = PARAMS_INT;
+	params_t para = PARAMS_INIT;
 
 	va_start(va, format);
 
@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 			total += print_start_stop(strt, ptr,
 			para.l_modifier || para.h_modifier ? ptr - 1 : 0);
 		else
-			total += get_print_func(ptr, va, &params);
+			total += get_print_func(ptr, va, &para);
 	}
 	_putchar(BF_FLUSH);
 	va_end(va);
