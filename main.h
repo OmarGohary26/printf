@@ -69,7 +69,7 @@ int print_string(va_list va, params_t *params);
 int print_perc(va_list va, params_t *params);
 int print_string_upper(va_list va, params_t *params);
 
-/* Number.c module*/
+/* num.c module*/
 char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list va, params_t *params);
 int print_address(va_list va, params_t *params);
@@ -102,7 +102,7 @@ int print_number_left_shift(char *str, params_t *params);
 /* params.c */
 void init_params(params_t *params, va_list va);
 
-/* string_fields.c */
+/* precision.c */
 char *get_precision(char *p, params_t *params, va_list va);
 
 /* _printf.c */
