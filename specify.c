@@ -69,27 +69,29 @@ int get_flag(char *s, params_t *params)
 {
 	int x = 0;
 
-	switch (*s)
+	if (*s == '*')
 	{
-		case '*':
-			x = params->plusflag = 1;
-			break;
-		case ' ':
-			x = params->spaceflag = 1;
-			break;
-		case '#':
-			x = params->hashtagflag = 1;
-			break;
-		case '-':
-			x = params->negativeflag = 1;
-			break;
-		case '0':
-			x = params->zeroflag = 1;
-			break;
+		x = params->plusflag = 1;
 	}
+	else if (*s == ' ')
+	{
+		x = params->spaceflag = 1;
+	}
+	else if (*s == '#')
+	{
+		x = params->hashtagflag = 1;
+	}
+	else if (*s == '-')
+	{
+		x = params->negativeflag = 1;
+	}
+	else if (*s == '0')
+	{
+		x = params->zeroflag = 1;
+	}
+
 	return (x);
 }
-
 /**
  * get_modifier - gets the modifier
  * @s: string
